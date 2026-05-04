@@ -23,6 +23,6 @@ This is a full-stack web application that provides user authentication using log
 
 ---
 
-## ⚙️ How to Run Locally
+## How to Run Locally
 
 ### 1. Clone the repository
