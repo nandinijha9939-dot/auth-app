@@ -7,12 +7,14 @@ async function signup() {
 
   const res = await fetch(`${BASE_URL}/api/auth/signup`, {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({ email, password })
   });
 
   const data = await res.json();
-  document.getElementById("signupMsg").innerText = data.message || "Signup successful";
+  document.getElementById("signupMsg").innerText = data.message;
 }
 
 // LOGIN
@@ -22,7 +24,9 @@ async function login() {
 
   const res = await fetch(`${BASE_URL}/api/auth/login`, {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({ email, password })
   });
 
@@ -32,6 +36,6 @@ async function login() {
     localStorage.setItem("user", email);
     window.location.href = "dashboard.html";
   } else {
-    document.getElementById("msg").innerText = "Login failed!";
+    document.getElementById("msg").innerText = data.message;
   }
 }
