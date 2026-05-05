@@ -1,4 +1,4 @@
-const BASE_URL = "https://auth-app-cje0.onrender.com";
+const BASE_URL = "https://auth-app-1-jdl2.onrender.com";
 
 // SIGNUP
 async function signup() {
