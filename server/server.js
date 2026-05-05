@@ -11,14 +11,17 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-mongoose.connect("mongodb://nandini:Nandini%402007@ac-3pmwrsn-shard-00-00.3ehszsa.mongodb.net:27017,ac-3pmwrsn-shard-00-01.3ehszsa.mongodb.net:27017,ac-3pmwrsn-shard-00-02.3ehszsa.mongodb.net:27017/?ssl=true&replicaSet=atlas-6sfksz-shard-0&authSource=admin&appName=Cluster0")
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("✅ Database Connected"))
 .catch(err => console.log(err));
+
 
 // Routes
 app.use("/api/auth", authRoutes);
 
 // Server start
-app.listen(5000, () => {
-  console.log("🚀 Server running on http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
