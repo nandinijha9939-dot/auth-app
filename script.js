@@ -1,5 +1,19 @@
 const BASE_URL = "https://auth-app-1-jdl2.onrender.com";
 
+const loginBox = document.querySelector(".container");
+const signupBox = document.getElementById("signupBox");
+
+// SWITCH UI
+function showSignup() {
+  loginBox.classList.add("hidden");
+  signupBox.classList.remove("hidden");
+}
+
+function showLogin() {
+  signupBox.classList.add("hidden");
+  loginBox.classList.remove("hidden");
+}
+
 // SIGNUP
 async function signup() {
   const email = document.getElementById("signupEmail").value;
